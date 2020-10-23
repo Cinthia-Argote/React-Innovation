@@ -12,7 +12,7 @@ export const Container = styled.article`
 `;
 
 export const Image = styled.img`
-  min-width: 100px;
+  width: 100px;
   height: 100%;
   border-radius: 5px;
   object-fit: cover;

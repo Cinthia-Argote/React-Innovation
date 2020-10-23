@@ -3,13 +3,24 @@ import { Container, IconContainer, Input } from "./elements";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const SearchInput: React.FC = () => {
+interface Props {
+  value: string;
+  onChange: (e: any) => void;
+  type: string;
+}
+
+const SearchInput: React.FC<Props> = ({ value, onChange, type }) => {
   return (
     <Container>
       <IconContainer>
         <FontAwesomeIcon icon={faSearch} size="lg" />
       </IconContainer>
-      <Input placeholder="Search..." />
+      <Input
+        value={value}
+        type={type}
+        onChange={onChange}
+        placeholder="Search..."
+      />
     </Container>
   );
 };

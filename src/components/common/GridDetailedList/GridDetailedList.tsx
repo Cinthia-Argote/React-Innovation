@@ -6,9 +6,8 @@ import DetailedCard from "../DetailedCard/DetailedCard";
 const Container = styled.main`
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   grid-auto-rows: 130px;
-  padding: ${(props) => props.theme.mainPadding};
 `;
 
 interface Props {
@@ -19,7 +18,7 @@ const GridDetailedList: React.FC<Props> = ({ items = [] }) => {
   return (
     <Container>
       {items.map((item) => (
-        <DetailedCard key={item.id} item={item} />
+        <DetailedCard key={item.id} hit={item} />
       ))}
     </Container>
   );

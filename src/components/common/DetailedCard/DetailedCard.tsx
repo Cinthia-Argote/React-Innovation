@@ -10,20 +10,21 @@ import {
 } from "./elements";
 
 interface Props {
-  item: any;
+  hit: any;
 }
 
-const DetailedCard: React.FC<Props> = ({ item }) => {
+const DetailedCard: React.FC<Props> = ({ hit }) => {
   return (
     <Container>
-      {item.image && <Image src={item.image} />}
+      <Image
+        src="https://i.pinimg.com/originals/13/be/12/13be12fc7291ea07d43667a453474b5b.jpg"
+        alt="hasta abajo "
+        width="10"
+      />
       <Information>
-        <Title>{item.title}</Title>
-        <Subtitle>{item.date}</Subtitle>
-        <Description>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
-          unde accusamus excepturi, commodi aperiam exercitationem architecto.
-        </Description>
+        <Title>{hit.title ? hit.title : "sin titulo"}</Title>
+        <Subtitle>{hit.status}</Subtitle>
+        <Description>{hit.description}</Description>
       </Information>
     </Container>
   );

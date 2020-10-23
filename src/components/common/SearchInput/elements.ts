@@ -7,7 +7,7 @@ export const Container = styled.section`
   display: flex;
   align-items: center;
   padding: 0 15px;
-  margin-top: 10px;
+  width: 100%;
 `;
 
 export const IconContainer = styled.div`
@@ -20,7 +20,7 @@ export const IconContainer = styled.div`
 `;
 
 export const Input = styled.input.attrs((props) => ({
-  type: "text",
+  type: "search",
   size: props.size || "2rem",
 }))`
   background-color: transparent;

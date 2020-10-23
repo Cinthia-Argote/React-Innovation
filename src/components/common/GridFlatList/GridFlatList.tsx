@@ -5,7 +5,7 @@ import FlatCard from "../FlatCard/FlatCard";
 
 const Container = styled.main`
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 120px;
   padding: ${(props) => props.theme.mainPadding};
