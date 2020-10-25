@@ -4,7 +4,6 @@ import "react-spring-modal/dist/index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-import GridDetailedList from "../GridDetailedList/GridDetailedList";
 import SearchInput from "../SearchInput/SearchInput";
 import {
   Container,
@@ -13,27 +12,14 @@ import {
   OptionsContainer,
   ResultsContainer,
 } from "./elements";
-import { fakeItems } from "../../views/Home/Home";
 
-import algoliasearch from "algoliasearch";
 import {
   InstantSearch,
-  SearchBox,
   Hits,
-  Highlight,
-  Stats,
-  SortBy,
-  Pagination,
-  RefinementList,
-  connectRefinementList,
   connectSearchBox,
 } from "react-instantsearch-dom";
 import DetailedCard from "../DetailedCard/DetailedCard";
-
-const searchClient = algoliasearch(
-  "95Q7KSV3G7",
-  "6763237f2120d815abaaf7be71233f09"
-);
+import clientAlgolia from '../../../config/algolia';
 
 interface Props {
   isOpen: boolean;
@@ -53,7 +39,7 @@ const CustomSearchInput = connectSearchBox(
 const SearchModal: React.FC<Props> = (props) => {
   return (
     <CenterModal {...props}>
-      <InstantSearch searchClient={searchClient} indexName="events">
+      <InstantSearch searchClient={clientAlgolia} indexName="events">
         <Container>
           <SearchBarContainer>
             <CustomSearchInput />
@@ -63,8 +49,6 @@ const SearchModal: React.FC<Props> = (props) => {
           </SearchBarContainer>
           <OptionsContainer>asd</OptionsContainer>
           <ResultsContainer className="body-content">
-            {/*<GridDetailedList items={fakeItems} />*/}
-
             <Hits hitComponent={DetailedCard} />
           </ResultsContainer>
         </Container>

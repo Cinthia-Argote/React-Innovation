@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Container,
   Image,
@@ -14,16 +13,21 @@ interface Props {
 }
 
 const DetailedCard: React.FC<Props> = ({ hit }) => {
+  const { activities = [], image = {}, onlineVenue = '', physicalVenue = '' } = hit;
+  const { title, image: imageData = {}, venue = '' } = activities[0] || {};
   return (
     <Container>
       <Image
-        src="https://i.pinimg.com/originals/13/be/12/13be12fc7291ea07d43667a453474b5b.jpg"
+        src={image.src || imageData.src}
         alt="hasta abajo "
         width="10"
       />
       <Information>
-        <Title>{hit.title ? hit.title : "sin titulo"}</Title>
-        <Subtitle>{hit.status}</Subtitle>
+        {<Title>{hit.title ? hit.title : title}</Title>}
+        <Subtitle>{venue || onlineVenue}</Subtitle>
+        {
+          physicalVenue && <Subtitle>{physicalVenue}</Subtitle>
+        }
         <Description>{hit.description}</Description>
       </Information>
     </Container>
