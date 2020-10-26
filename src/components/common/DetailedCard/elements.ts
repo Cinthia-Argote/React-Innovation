@@ -23,15 +23,21 @@ export const Image = styled.img`
 
 export const Information = styled.div`
   overflow: hidden;
+  width: calc(100% - 100px);
 `;
 
 export const Title = styled(H3)`
   color: ${(props) => props.theme.colors.lightGray};
+  font-size: 14px;
 `;
 
 export const Subtitle = styled(Subtitle3)`
   color: #676781;
   margin: 5px 0;
+  font-size: 12px;
+  line-height: 11px;
+  display: inline;
+  margin-right: 3px;
 `;
 
 export const Description = styled.p`

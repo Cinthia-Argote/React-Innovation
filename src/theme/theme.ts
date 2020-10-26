@@ -14,4 +14,10 @@ export const mainTheme: DefaultTheme = {
     secondary: "#FF0023",
     white: "#FFFFF",
   },
+  devices: {
+    mobileL: "(min-width: 425px)",
+    tablet: "(min-width: 768px)",
+    laptop: "(min-width: 1024px)",
+    desktop: "(min-width: 1440px)",
+  },
 };

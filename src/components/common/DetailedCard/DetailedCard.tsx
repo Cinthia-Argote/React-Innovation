@@ -6,6 +6,7 @@ import {
   Subtitle,
   Information,
   Description,
+  Title,
 } from "./elements";
 
 interface Props {
@@ -13,24 +14,29 @@ interface Props {
 }
 
 const DetailedCard: React.FC<Props> = ({ hit }) => {
-  const { activities = [], image = {}, onlineVenue = '', physicalVenue = '', title = '' } = hit;
-  const { image: imageData = {}, venue = '' } = activities[0] || {};
+  const {
+    activities = [],
+    image = {},
+    onlineVenue = "",
+    physicalVenue = "",
+    title = "",
+  } = hit;
+  const { image: imageData = {}, venue = "" } = activities[0] || {};
   return (
     <Container>
-      <Image
-        src={image.src || imageData.src}
-        alt="hasta abajo "
-        width="10"
-      />
+      <Image src={image.src || imageData.src} alt="hasta abajo " width="10" />
       <Information>
-        {
-          title ?  <CustomHighlight attribute="title" hit={hit}>{title}</CustomHighlight>
-          : <CustomHighlight attribute="activities[0].title" hit={hit} />
-        }
+        <Title>
+          {title ? (
+            <CustomHighlight attribute="title" hit={hit}>
+              {title}
+            </CustomHighlight>
+          ) : (
+            <CustomHighlight attribute="activities[0].title" hit={hit} />
+          )}
+        </Title>
         <Subtitle>{venue || onlineVenue}</Subtitle>
-        {
-          physicalVenue && <Subtitle>{physicalVenue}</Subtitle>
-        }
+        {physicalVenue && <Subtitle>{physicalVenue}</Subtitle>}
         <Description>{hit.description}</Description>
       </Information>
     </Container>

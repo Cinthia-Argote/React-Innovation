@@ -8,15 +8,21 @@ export const Container = styled.div`
   max-width: 500px;
   padding: ${(props) => props.theme.mainPadding};
   padding-top: 30px;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    height: 80vh;
+  } ;
 `;
 
 export const CloseOption = styled.div`
-  width: 40px;
+  width: 80px;
+  font-weight: 900;
   height: 40px;
   margin-left: 10px;
   color: ${(props) => props.theme.colors.gray};
   text-align: center;
-  padding-top: 8px;
+  padding-top: 10px;
+  font-size: 14px;
   cursor: pointer;
 `;
 

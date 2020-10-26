@@ -15,5 +15,11 @@ declare module "styled-components" {
       secondary: string;
       black: string;
     };
+    devices: {
+      mobileL: string;
+      tablet: string;
+      laptop: string;
+      desktop: string;
+    };
   }
 }
