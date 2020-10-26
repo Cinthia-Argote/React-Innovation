@@ -9,7 +9,6 @@ import {
   Container,
   SearchBarContainer,
   CloseOption,
-  OptionsContainer,
   ResultsContainer,
 } from "./elements";
 
@@ -17,6 +16,7 @@ import {
   InstantSearch,
   Hits,
   connectSearchBox,
+  connectStateResults,
 } from "react-instantsearch-dom";
 import DetailedCard from "../DetailedCard/DetailedCard";
 import clientAlgolia from '../../../config/algolia';
@@ -36,6 +36,21 @@ const CustomSearchInput = connectSearchBox(
   )
 );
 
+const Results = connectStateResults(
+  ({ searchState, searchResults, children }: any) =>
+    {
+      const { query = '' } = searchState;
+      const { hits = [] } = searchResults || {};
+      if(query) {
+        if(hits.length === 0) {
+          return <div style={{ color: 'white'}}>No results have been found for {query}.</div>
+        }
+        return <ResultsContainer>{children}</ResultsContainer>;
+      }
+        return <div />
+    }
+);
+
 const SearchModal: React.FC<Props> = (props) => {
   return (
     <CenterModal {...props}>
@@ -47,10 +62,12 @@ const SearchModal: React.FC<Props> = (props) => {
               <FontAwesomeIcon icon={faTimes} size="lg" />
             </CloseOption>
           </SearchBarContainer>
-          <OptionsContainer>asd</OptionsContainer>
-          <ResultsContainer className="body-content">
+          {/* <ResultsContainer className="body-content">
             <Hits hitComponent={DetailedCard} />
-          </ResultsContainer>
+          </ResultsContainer> */}
+          <Results>
+          <Hits hitComponent={DetailedCard} />
+          </Results>
         </Container>
       </InstantSearch>
     </CenterModal>

@@ -1,8 +1,8 @@
 import React from "react";
+import CustomHighlight from "../CustomHighlight/CustomHighlight";
 import {
   Container,
   Image,
-  Title,
   Subtitle,
   Information,
   Description,
@@ -13,8 +13,8 @@ interface Props {
 }
 
 const DetailedCard: React.FC<Props> = ({ hit }) => {
-  const { activities = [], image = {}, onlineVenue = '', physicalVenue = '' } = hit;
-  const { title, image: imageData = {}, venue = '' } = activities[0] || {};
+  const { activities = [], image = {}, onlineVenue = '', physicalVenue = '', title = '' } = hit;
+  const { image: imageData = {}, venue = '' } = activities[0] || {};
   return (
     <Container>
       <Image
@@ -23,7 +23,10 @@ const DetailedCard: React.FC<Props> = ({ hit }) => {
         width="10"
       />
       <Information>
-        {<Title>{hit.title ? hit.title : title}</Title>}
+        {
+          title ?  <CustomHighlight attribute="title" hit={hit}>{title}</CustomHighlight>
+          : <CustomHighlight attribute="activities[0].title" hit={hit} />
+        }
         <Subtitle>{venue || onlineVenue}</Subtitle>
         {
           physicalVenue && <Subtitle>{physicalVenue}</Subtitle>
