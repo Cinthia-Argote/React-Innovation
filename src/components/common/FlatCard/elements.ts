@@ -1,44 +1,32 @@
 import styled, { DefaultTheme, StyledComponent } from "styled-components";
+import { animated } from "react-spring";
+
 import { H2, Subtitle2 } from "../typography";
 
-export const Container: StyledComponent<
-  "article",
-  DefaultTheme,
-  { span: number; imageUrl: string },
-  never
-> = styled.article`
+export const Container: any = styled(animated.article)`
   height: 100%;
   width: 100%;
-  position: relative;
   grid-row: ${({ span }: any) => `span ${span}`};
-  background-color: ${(props) => props.theme.colors.lightGray};
-  border-radius: ${(props) => props.theme.borderRadius};
-  background-image: ${({ imageUrl }: any) => `url(${imageUrl})`};
-  background-size: cover;
-  transition: 0.4s all;
   cursor: pointer;
-  &:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  }
 `;
 
 export const Layer: StyledComponent<
   "div",
   DefaultTheme,
-  { hasImage: boolean },
+  { hasImage: boolean; imageUrl: string },
   never
 > = styled.div`
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 60px);
   border-radius: ${(props) => props.theme.borderRadius};
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1.2rem;
-  background-image: ${({ hasImage }: any) =>
-    hasImage
-      ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);`
-      : "none"};
+  background-image: ${({ imageUrl }: any) => `url(${imageUrl})`};
+  background-size: cover;
+  width: 100%;
+`;
+
+export const Description = styled.div`
+  width: 100%;
+  height: 60px;
+  padding: 10px 2px;
 `;
 
 export const Title: StyledComponent<
@@ -47,8 +35,9 @@ export const Title: StyledComponent<
   { hasImage: boolean },
   never
 > = styled(H2)`
-  color: ${(props: any) =>
-    props.hasImage ? props.theme.colors.main : props.theme.colors.blackGray};
+  color: ${(props: any) => props.theme.colors.gray};
+  font-size: 15px;
+  line-height: 14px;
 `;
 
 export const Subtitle: StyledComponent<
@@ -57,8 +46,7 @@ export const Subtitle: StyledComponent<
   { hasImage: boolean },
   never
 > = styled(Subtitle2)`
-  color: ${(props: any) =>
-    props.hasImage ? props.theme.colors.lightGray : props.theme.colors.gray};
-  margin-top: 5px;
-  font-weight: 900;
+  color: ${(props) => props.theme.colors.dimGray};
+  font-size: 14px;
+  font-weight: 700;
 `;

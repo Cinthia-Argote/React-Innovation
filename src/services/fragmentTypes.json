@@ -1,0 +1,30 @@
+{
+  "__schema": {
+    "types": [
+      {
+        "kind": "UNION",
+        "name": "activity",
+        "possibleTypes": [
+          {
+            "name": "Activity"
+          },
+          {
+            "name": "Error"
+          }
+        ]
+      },
+      {
+        "kind": "UNION",
+        "name": "activities",
+        "possibleTypes": [
+          {
+            "name": "Activities"
+          },
+          {
+            "name": "Error"
+          }
+        ]
+      }
+    ]
+  }
+}
