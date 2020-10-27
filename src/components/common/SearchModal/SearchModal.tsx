@@ -3,9 +3,9 @@ import { CenterModal } from "react-spring-modal";
 import "react-spring-modal/dist/index.css";
 import {
   InstantSearch,
-  Hits,
   connectSearchBox,
   connectStateResults,
+  connectRefinementList,
 } from "react-instantsearch-dom";
 
 import SearchInput from "../SearchInput/SearchInput";
@@ -22,6 +22,9 @@ import { useTrail, animated } from "react-spring";
 
 import DetailedCard from "../DetailedCard/DetailedCard";
 import clientAlgolia from "../../../config/algolia";
+import RefinementList from "../RefinementListAlgolia/RefinementListAlgolia";
+
+const FilterEventType = connectRefinementList(RefinementList);
 
 const config = { mass: 5, tension: 2000, friction: 200 };
 
@@ -90,9 +93,11 @@ const SearchModal: React.FC<Props> = (props) => {
             <CustomSearchInput />
             <CloseOption onClick={props.onRequestClose}>Cancel</CloseOption>
           </SearchBarContainer>
-          <OptionsContainer>Options</OptionsContainer>
+          <OptionsContainer>
+            <FilterEventType attribute="eventType" />
+          </OptionsContainer>
           <ResultsContainer>
-            <Results>{/*<Hits hitComponent={DetailedCard} />*/}</Results>
+            <Results />
           </ResultsContainer>
         </Container>
       </InstantSearch>
