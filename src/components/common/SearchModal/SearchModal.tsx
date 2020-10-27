@@ -1,22 +1,22 @@
 import React from "react";
 import { CenterModal } from "react-spring-modal";
 import "react-spring-modal/dist/index.css";
-
-import SearchInput from "../SearchInput/SearchInput";
-import {
-  Container,
-  SearchBarContainer,
-  CloseOption,
-  ResultsContainer,
-  OptionsContainer,
-} from "./elements";
-
 import {
   InstantSearch,
   Hits,
   connectSearchBox,
   connectStateResults,
 } from "react-instantsearch-dom";
+
+import SearchInput from "../SearchInput/SearchInput";
+import {
+  Container,
+  SearchBarContainer,
+  CloseOption,
+  NoResults,
+  ResultsContainer,
+  OptionsContainer,
+} from "./elements";
 import DetailedCard from "../DetailedCard/DetailedCard";
 import clientAlgolia from "../../../config/algolia";
 
@@ -42,9 +42,9 @@ const Results = connectStateResults(
     if (query) {
       if (hits.length === 0) {
         return (
-          <div style={{ color: "white" }}>
+          <NoResults>
             No results have been found for <strong>{query}</strong>.
-          </div>
+          </NoResults>
         );
       }
       return <>{children}</>;
@@ -62,7 +62,9 @@ const SearchModal: React.FC<Props> = (props) => {
             <CustomSearchInput />
             <CloseOption onClick={props.onRequestClose}>Cancel</CloseOption>
           </SearchBarContainer>
-          <OptionsContainer>options</OptionsContainer>
+          <OptionsContainer>
+            Options
+          </OptionsContainer>
           <ResultsContainer>
             <Results>
               <Hits hitComponent={DetailedCard} />

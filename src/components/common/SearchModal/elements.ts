@@ -36,4 +36,8 @@ export const OptionsContainer = styled.div`
   padding: 6px 0;
 `;
 
+export const NoResults = styled.div`
+  color: white;
+`;
+
 export const ResultsContainer = styled.section``;
