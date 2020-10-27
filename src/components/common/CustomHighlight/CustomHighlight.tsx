@@ -16,7 +16,7 @@ const Highlight = ({ highlight, attribute, hit }: any) => {
            return  part.isHighlighted ? (
             <mark key={index}>{part.value}</mark>
           ) : (
-            <span style={{ color: 'white'}} key={index}>{part.value}</span>
+            <span key={index}>{part.value}</span>
           )
          }
       )}
