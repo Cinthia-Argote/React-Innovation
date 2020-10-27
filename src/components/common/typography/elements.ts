@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const H1 = styled.h1`
   font-size: 1.9rem;
   line-height: 1.9rem;
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.gray};
   font-weight: 900;
 `;
 export const Subtitle1 = styled.p`
   font-size: 1.15rem;
   line-height: 1.2rem;
-  color: ${(props) => props.theme.colors.gray};
+  color: ${(props) => props.theme.colors.dimGray};
   font-weight: 700;
 `;
 

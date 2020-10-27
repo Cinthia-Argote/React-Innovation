@@ -4,13 +4,15 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
+        background-color: #161619;
+        color: gray;
     }
     *,*:after,*:before{
-        box-sizing:border-box;
-        margin:0;
-        padding:0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
     ul{
-        list-style:none
+        list-style: none
     }
 `;
