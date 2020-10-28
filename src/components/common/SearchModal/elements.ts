@@ -4,6 +4,7 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.colors.black};
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
   width: 100vw;
   max-width: 500px;
   padding: ${(props) => props.theme.mainPadding};
@@ -40,4 +41,6 @@ export const NoResults = styled.div`
   color: white;
 `;
 
-export const ResultsContainer = styled.section``;
+export const ResultsContainer = styled.section`
+  position: relative;
+`;

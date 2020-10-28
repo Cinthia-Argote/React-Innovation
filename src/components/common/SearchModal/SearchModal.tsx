@@ -18,7 +18,7 @@ import {
   OptionsContainer,
 } from "./elements";
 
-import { useTrail, animated } from "react-spring";
+import { useTransition, animated, useSpring } from "react-spring";
 
 import DetailedCard from "../DetailedCard/DetailedCard";
 import clientAlgolia from "../../../config/algolia";
@@ -26,7 +26,7 @@ import RefinementList from "../RefinementListAlgolia/RefinementListAlgolia";
 
 const FilterEventType = connectRefinementList(RefinementList);
 
-const config = { mass: 5, tension: 2000, friction: 200 };
+const config = { mass: 10, tension: 2000, friction: 200 };
 
 interface Props {
   isOpen: boolean;
@@ -43,46 +43,50 @@ const CustomSearchInput = connectSearchBox(
   )
 );
 
-const Results = connectStateResults(
-  ({ searchState, searchResults, children }: any) => {
-    const { query = "" } = searchState;
-    const { hits = [] } = searchResults || {};
+const Results = connectStateResults(({ searchState, searchResults }: any) => {
+  const { query = "" } = searchState;
+  const { hits = [] } = searchResults || {};
 
-    const trail = useTrail(hits.length, {
-      config,
-      opacity: query ? 1 : 0,
-      x: query ? 0 : 20,
-      height: query ? 80 : 0,
-      from: { opacity: 0, x: 120, height: 0 },
-    });
+  const transitions = useTransition(hits, (item) => item.id, {
+    config,
+    from: {
+      transform: "translate3d(150px,0,0)",
+      opacity: 0,
+    },
+    enter: {
+      transform: "translate3d(0,0,0)",
+      opacity: 1,
+    },
+    leave: {
+      transform: "translate3d(-150px,0,0)",
+      opacity: 0,
+    },
+  });
 
-    if (query) {
-      if (hits.length === 0) {
-        return (
+  const props = useSpring({
+    opacity: hits.length === 0 ? 1 : 0,
+    position: "absolute",
+    top: 0,
+    left: 0,
+  });
+
+  return (
+    <>
+      {transitions.map(({ item, key, props }: any) => (
+        <animated.div key={key} style={props}>
+          <DetailedCard hit={item} />
+        </animated.div>
+      ))}
+      <animated.div style={props}>
+        {query && (
           <NoResults>
             No results have been found for <strong>{query}</strong>.
           </NoResults>
-        );
-      }
-      return (
-        <>
-          {trail.map(({ x, height, ...rest }: any, index) => (
-            <animated.div
-              key={hits[index].id}
-              style={{
-                ...rest,
-                transform: x.interpolate((x: any) => `translate3d(0,${x}px,0)`),
-              }}
-            >
-              <DetailedCard hit={hits[index]} />
-            </animated.div>
-          ))}
-        </>
-      );
-    }
-    return <div />;
-  }
-);
+        )}
+      </animated.div>
+    </>
+  );
+});
 
 const SearchModal: React.FC<Props> = (props) => {
   return (
