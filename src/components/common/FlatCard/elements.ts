@@ -1,9 +1,8 @@
 import styled, { DefaultTheme, StyledComponent } from "styled-components";
-import { animated } from "react-spring";
 
 import { H2, Subtitle2 } from "../typography";
 
-export const Container: any = styled(animated.article)`
+export const Container: any = styled.article`
   height: 100%;
   width: 100%;
   grid-row: ${({ span }: any) => `span ${span}`};

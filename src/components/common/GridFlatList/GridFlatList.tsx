@@ -1,44 +1,56 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useTrail } from "react-spring";
+import { useTrail, animated } from "react-spring";
 
 import FlatCard from "../FlatCard/FlatCard";
-
-const config = { mass: 5, tension: 2000, friction: 200 };
+//5,2000,200
+const config = { mass: 10, tension: 2000, friction: 200 };
 
 const Container = styled.main`
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-auto-rows: 60px;
   padding: ${(props) => props.theme.mainPadding};
 `;
+
+const Item: any = styled(animated.div)`
+  grid-row: ${(props: any) => `span ${props.span}`};
+`;
+
+const calSpanSize = (event: any) => {
+  const hasImage = event.image || event.activities[0].image;
+  if (!hasImage) return 1;
+  return event.eventType === "SINGLE" ? 4 : 5;
+};
 
 interface Props {
   items?: any[];
 }
 
 const GridFlatList: React.FC<Props> = ({ items = [] }) => {
-  const [toggle] = useState(true);
   const trail = useTrail(items.length, {
     config,
-    opacity: toggle ? 1 : 0,
-    x: toggle ? 0 : 20,
-    height: toggle ? 80 : 0,
-    from: { opacity: 0, x: 20, height: 0 },
+    from: {
+      opacity: 0,
+      transform: "scale(0.2)",
+    },
+    to: {
+      opacity: 1,
+      transform: "scale(1)",
+    },
   });
 
   return (
     <Container>
-      {trail.map(({ x, height, ...rest }: any, index) => (
-        <FlatCard
+      {trail.map((props, index) => (
+        <Item
           key={items[index].id}
-          item={items[index]}
-          style={{
-            ...rest,
-            transform: x.interpolate((x: number) => `translate3d(0,${x}px,0)`),
-          }}
-        />
+          style={props}
+          span={calSpanSize(items[index])}
+        >
+          <FlatCard item={items[index]} />
+        </Item>
       ))}
     </Container>
   );

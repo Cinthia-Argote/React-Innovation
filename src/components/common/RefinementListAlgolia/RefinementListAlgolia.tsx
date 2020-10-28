@@ -23,15 +23,14 @@ const RefinementList = (props: any) => {
               value: any;
               count: React.ReactNode;
             }) => (
-              <ListItem key={item.label} isRefined={item.isRefined}>
-                <span
-                  onClick={(event) => {
-                    event.preventDefault();
-                    refine(item.value);
-                  }}
-                >
-                  {item.label}
-                </span>
+              <ListItem
+                key={item.label}
+                isRefined={item.isRefined}
+                onClick={() => {
+                  refine(item.value);
+                }}
+              >
+                <span>{item.label}</span>
               </ListItem>
             )
           )}

@@ -1,25 +1,26 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Actio",
+  "name": "Actio - find all kinds of events",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "AppIconActio.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
-      "src": "logo192.png",
+      "src": "AppIconActio.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "AppIconActio@2x.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#363646",
+  "background_color": "#252530"
 }
