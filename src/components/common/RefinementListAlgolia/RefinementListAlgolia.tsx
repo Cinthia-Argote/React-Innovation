@@ -3,19 +3,20 @@ import { ContainerFilter, ContainerList, ListItem } from "./elements";
 
 const RefinementList = (props: any) => {
   const { items = [], refine } = props;
+  const sortItems = (a: any, b: any) => {
+    if (a.label > b.label) {
+      return 1;
+    }
+    if (a.label < b.label) {
+      return -1;
+    }
+    return 0;
+  };
   return (
     <ContainerFilter>
       <ContainerList>
         {items
-          .sort((a: any, b: any) => {
-            if (a.label > b.label) {
-              return 1;
-            }
-            if (a.label < b.label) {
-              return -1;
-            }
-            return 0;
-          })
+          .sort(sortItems)
           .map(
             (item: {
               label: string;
