@@ -1,6 +1,8 @@
 import React from "react";
 import { ContainerFilter, ContainerList, ListItem } from "./elements";
 
+const labelOptions = ["Single", "Multiple Fixed", "Multiple Constantly"];
+
 const RefinementList = (props: any) => {
   const { items = [], refine } = props;
   const sortItems = (a: any, b: any) => {
@@ -19,7 +21,7 @@ const RefinementList = (props: any) => {
           .sort(sortItems)
           .map(
             (item: {
-              label: string;
+              label: number;
               isRefined: any;
               value: any;
               count: React.ReactNode;
@@ -31,7 +33,7 @@ const RefinementList = (props: any) => {
                   refine(item.value);
                 }}
               >
-                <span>{item.label}</span>
+                <span>{labelOptions[item.label]}</span>
               </ListItem>
             )
           )}
