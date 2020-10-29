@@ -28,11 +28,6 @@ const FilterEventType = connectRefinementList(RefinementList);
 
 const config = { mass: 10, tension: 2000, friction: 200 };
 
-interface Props {
-  isOpen: boolean;
-  onRequestClose: () => void;
-}
-
 const CustomSearchInput = connectSearchBox(
   ({ currentRefinement, isSearchStalled, refine }: any) => (
     <SearchInput
@@ -88,14 +83,19 @@ const Results = connectStateResults(({ searchState, searchResults }: any) => {
   );
 });
 
-const SearchModal: React.FC<Props> = (props) => {
+interface Props {
+  isOpen: boolean;
+  onRequestClose: () => void;
+}
+
+const SearchModal: React.FC<Props> = ({ isOpen, onRequestClose }) => {
   return (
-    <CenterModal {...props}>
+    <CenterModal isOpen={isOpen} onRequestClose={onRequestClose}>
       <InstantSearch searchClient={clientAlgolia} indexName="eventTest">
         <Container>
           <SearchBarContainer>
             <CustomSearchInput />
-            <CloseOption onClick={props.onRequestClose}>Cancel</CloseOption>
+            <CloseOption onClick={onRequestClose}>Cancel</CloseOption>
           </SearchBarContainer>
           <OptionsContainer>
             <FilterEventType attribute="eventType" />

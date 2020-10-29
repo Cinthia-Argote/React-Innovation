@@ -20,7 +20,7 @@ const Item: any = styled(animated.div)`
 
 const calSpanSize = (event: any) => {
   const hasImage = event.image || event.activities[0].image;
-  if (!hasImage) return 1;
+  if (!hasImage) return 2;
   return event.eventType === "SINGLE" ? 4 : 5;
 };
 
