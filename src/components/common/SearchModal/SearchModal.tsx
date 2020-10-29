@@ -91,7 +91,7 @@ const Results = connectStateResults(({ searchState, searchResults }: any) => {
 const SearchModal: React.FC<Props> = (props) => {
   return (
     <CenterModal {...props}>
-      <InstantSearch searchClient={clientAlgolia} indexName="events">
+      <InstantSearch searchClient={clientAlgolia} indexName="eventTest">
         <Container>
           <SearchBarContainer>
             <CustomSearchInput />
