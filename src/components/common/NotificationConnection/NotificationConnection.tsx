@@ -6,6 +6,8 @@ import {
   Notification,
   ContainerNotification,
   ContainerImage,
+  NotificationTitle,
+  NotificationSubtitle,
 } from "./elements";
 
 const ImageDinosaur = ({ fill = "rgb(83,83,83)" }) => (
@@ -39,8 +41,8 @@ const NotificationConnection = () => {
           <ImageDinosaur fill={fill} />
         </ContainerImage>
         <Notification>
-          <h3>{message.title}</h3>
-          <p>{message.subtitle}</p>
+          <NotificationTitle>{message.title}</NotificationTitle>
+          <NotificationSubtitle>{message.subtitle}</NotificationSubtitle>
         </Notification>
       </ContainerNotification>
     );
@@ -57,7 +59,7 @@ const NotificationConnection = () => {
 
   const online = () =>
     notify({
-      fill: "#00E676",
+      fill: "#81C784",
       message: {
         title: "You're Online",
         subtitle: "Welcome back to join",
@@ -76,8 +78,9 @@ const NotificationConnection = () => {
 
   return (
     <ToastContainer
-      position="bottom-right"
-      autoClose={5000}
+      style={{ padding: 0, backgroundColor: "transparent" }}
+      position="bottom-left"
+      autoClose={4000}
       closeOnClick={false}
       closeButton={false}
     />

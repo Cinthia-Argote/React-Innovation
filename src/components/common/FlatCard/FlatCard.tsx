@@ -6,7 +6,7 @@ import {
   Title,
   Subtitle,
   Description,
-  CardHeader,
+  TypeChip,
 } from "./elements";
 
 interface Props {
@@ -20,12 +20,15 @@ const FlatCard: React.FC<Props> = ({ item }) => {
 
   return (
     <Container>
-      <CardHeader>
-        <Title>{cardTitle}</Title>
-      </CardHeader>
       <Layer hasImage={hasImage} imageUrl={cardImage.src} />
       <Description>
-        <Subtitle hasImage={hasImage}>{item.creationDate}</Subtitle>
+        <div>
+          <Title>{cardTitle}</Title>
+          <Subtitle hasImage={hasImage}>{item.creationDate}</Subtitle>
+        </div>
+        <div>
+          <TypeChip>{item.eventType.replace("_", " ")}</TypeChip>
+        </div>
       </Description>
     </Container>
   );

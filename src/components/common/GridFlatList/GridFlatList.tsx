@@ -9,7 +9,7 @@ const config = { mass: 10, tension: 2000, friction: 200 };
 const Container = styled.main`
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 60px;
   padding: ${(props) => props.theme.mainPadding};
 `;
@@ -21,7 +21,7 @@ const Item: any = styled(animated.div)`
 const calSpanSize = (event: any) => {
   const hasImage = event.image || event.activities[0].image;
   if (!hasImage) return 2;
-  return event.eventType === "SINGLE" ? 4 : 5;
+  return event.eventType === "SINGLE" ? 4 : 6;
 };
 
 interface Props {

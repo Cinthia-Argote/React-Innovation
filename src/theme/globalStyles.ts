@@ -15,4 +15,23 @@ export const GlobalStyle = createGlobalStyle`
     ul{
         list-style: none
     }
+    
+    /* Let's get this party started */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #363646; 
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: #363646; 
+    }
 `;
