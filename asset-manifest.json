@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/Cinthia-Argote/React-Innovation/static/js/main.6e1bf3ac.chunk.js",
+    "main.js.map": "/Cinthia-Argote/React-Innovation/static/js/main.6e1bf3ac.chunk.js.map",
+    "runtime-main.js": "/Cinthia-Argote/React-Innovation/static/js/runtime-main.41902dae.js",
+    "runtime-main.js.map": "/Cinthia-Argote/React-Innovation/static/js/runtime-main.41902dae.js.map",
+    "static/css/2.a4c75004.chunk.css": "/Cinthia-Argote/React-Innovation/static/css/2.a4c75004.chunk.css",
+    "static/js/2.6285dce4.chunk.js": "/Cinthia-Argote/React-Innovation/static/js/2.6285dce4.chunk.js",
+    "static/js/2.6285dce4.chunk.js.map": "/Cinthia-Argote/React-Innovation/static/js/2.6285dce4.chunk.js.map",
+    "index.html": "/Cinthia-Argote/React-Innovation/index.html",
+    "precache-manifest.525a2cf47a760aaca1356e87afa1156e.js": "/Cinthia-Argote/React-Innovation/precache-manifest.525a2cf47a760aaca1356e87afa1156e.js",
+    "service-worker.js": "/Cinthia-Argote/React-Innovation/service-worker.js",
+    "static/css/2.a4c75004.chunk.css.map": "/Cinthia-Argote/React-Innovation/static/css/2.a4c75004.chunk.css.map",
+    "static/js/2.6285dce4.chunk.js.LICENSE.txt": "/Cinthia-Argote/React-Innovation/static/js/2.6285dce4.chunk.js.LICENSE.txt",
+    "static/media/actio_logo.svg": "/Cinthia-Argote/React-Innovation/static/media/actio_logo.bf92de0f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.41902dae.js",
+    "static/css/2.a4c75004.chunk.css",
+    "static/js/2.6285dce4.chunk.js",
+    "static/js/main.6e1bf3ac.chunk.js"
+  ]
+}
