@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/Cinthia-Argote/React-Innovation/static/js/main.6e1bf3ac.chunk.js",
-    "main.js.map": "/Cinthia-Argote/React-Innovation/static/js/main.6e1bf3ac.chunk.js.map",
-    "runtime-main.js": "/Cinthia-Argote/React-Innovation/static/js/runtime-main.41902dae.js",
-    "runtime-main.js.map": "/Cinthia-Argote/React-Innovation/static/js/runtime-main.41902dae.js.map",
-    "static/css/2.a4c75004.chunk.css": "/Cinthia-Argote/React-Innovation/static/css/2.a4c75004.chunk.css",
-    "static/js/2.6285dce4.chunk.js": "/Cinthia-Argote/React-Innovation/static/js/2.6285dce4.chunk.js",
-    "static/js/2.6285dce4.chunk.js.map": "/Cinthia-Argote/React-Innovation/static/js/2.6285dce4.chunk.js.map",
-    "index.html": "/Cinthia-Argote/React-Innovation/index.html",
-    "precache-manifest.525a2cf47a760aaca1356e87afa1156e.js": "/Cinthia-Argote/React-Innovation/precache-manifest.525a2cf47a760aaca1356e87afa1156e.js",
-    "service-worker.js": "/Cinthia-Argote/React-Innovation/service-worker.js",
-    "static/css/2.a4c75004.chunk.css.map": "/Cinthia-Argote/React-Innovation/static/css/2.a4c75004.chunk.css.map",
-    "static/js/2.6285dce4.chunk.js.LICENSE.txt": "/Cinthia-Argote/React-Innovation/static/js/2.6285dce4.chunk.js.LICENSE.txt",
-    "static/media/actio_logo.svg": "/Cinthia-Argote/React-Innovation/static/media/actio_logo.bf92de0f.svg"
+    "main.js": "/React-Innovation/static/js/main.e7c543d3.chunk.js",
+    "main.js.map": "/React-Innovation/static/js/main.e7c543d3.chunk.js.map",
+    "runtime-main.js": "/React-Innovation/static/js/runtime-main.4feec853.js",
+    "runtime-main.js.map": "/React-Innovation/static/js/runtime-main.4feec853.js.map",
+    "static/css/2.a4c75004.chunk.css": "/React-Innovation/static/css/2.a4c75004.chunk.css",
+    "static/js/2.de76fd25.chunk.js": "/React-Innovation/static/js/2.de76fd25.chunk.js",
+    "static/js/2.de76fd25.chunk.js.map": "/React-Innovation/static/js/2.de76fd25.chunk.js.map",
+    "index.html": "/React-Innovation/index.html",
+    "precache-manifest.a82cacdcd6a4859c0b9ad852f5f8dc4f.js": "/React-Innovation/precache-manifest.a82cacdcd6a4859c0b9ad852f5f8dc4f.js",
+    "service-worker.js": "/React-Innovation/service-worker.js",
+    "static/css/2.a4c75004.chunk.css.map": "/React-Innovation/static/css/2.a4c75004.chunk.css.map",
+    "static/js/2.de76fd25.chunk.js.LICENSE.txt": "/React-Innovation/static/js/2.de76fd25.chunk.js.LICENSE.txt",
+    "static/media/actio_logo.svg": "/React-Innovation/static/media/actio_logo.bf92de0f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.41902dae.js",
+    "static/js/runtime-main.4feec853.js",
     "static/css/2.a4c75004.chunk.css",
-    "static/js/2.6285dce4.chunk.js",
-    "static/js/main.6e1bf3ac.chunk.js"
+    "static/js/2.de76fd25.chunk.js",
+    "static/js/main.e7c543d3.chunk.js"
   ]
 }
