@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/React-Innovation/static/js/main.ab8c74ff.chunk.js",
-    "main.js.map": "/React-Innovation/static/js/main.ab8c74ff.chunk.js.map",
+    "main.js": "/React-Innovation/static/js/main.292ad5a1.chunk.js",
+    "main.js.map": "/React-Innovation/static/js/main.292ad5a1.chunk.js.map",
     "runtime-main.js": "/React-Innovation/static/js/runtime-main.4feec853.js",
     "runtime-main.js.map": "/React-Innovation/static/js/runtime-main.4feec853.js.map",
     "static/css/2.a4c75004.chunk.css": "/React-Innovation/static/css/2.a4c75004.chunk.css",
     "static/js/2.866146e5.chunk.js": "/React-Innovation/static/js/2.866146e5.chunk.js",
     "static/js/2.866146e5.chunk.js.map": "/React-Innovation/static/js/2.866146e5.chunk.js.map",
     "index.html": "/React-Innovation/index.html",
-    "precache-manifest.b0717494397b5a38732f380651d00ebe.js": "/React-Innovation/precache-manifest.b0717494397b5a38732f380651d00ebe.js",
+    "precache-manifest.956f8bcc3605aac1354a83b9daff6d5d.js": "/React-Innovation/precache-manifest.956f8bcc3605aac1354a83b9daff6d5d.js",
     "service-worker.js": "/React-Innovation/service-worker.js",
     "static/css/2.a4c75004.chunk.css.map": "/React-Innovation/static/css/2.a4c75004.chunk.css.map",
     "static/js/2.866146e5.chunk.js.LICENSE.txt": "/React-Innovation/static/js/2.866146e5.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.4feec853.js",
     "static/css/2.a4c75004.chunk.css",
     "static/js/2.866146e5.chunk.js",
-    "static/js/main.ab8c74ff.chunk.js"
+    "static/js/main.292ad5a1.chunk.js"
   ]
 }
