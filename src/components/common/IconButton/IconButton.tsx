@@ -12,7 +12,7 @@ const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${(props) => props.theme.colors.gray};
+  color: ${(props) => props.theme.colors.lightGray};
 `;
 
 interface Props {

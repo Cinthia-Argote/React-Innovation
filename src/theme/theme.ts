@@ -6,13 +6,13 @@ export const mainTheme: DefaultTheme = {
   colors: {
     black: "#252530",
     blackGray: "#363646",
-    dimGray: "#707070",
+    dimGray: "#808080",
     lightGray: "#F3F1F1",
     blueGray: "#D7D7EF",
     gray: "#c2c2c2",
     main: "#FF1744",
     secondary: "#FF0023",
-    white: "#FFFFF",
+    white: "#FFFFFF",
   },
   devices: {
     mobileL: "(min-width: 425px)",

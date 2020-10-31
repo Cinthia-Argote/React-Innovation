@@ -13,7 +13,7 @@ export const Container = styled.article`
 
 export const Image = styled.img`
   width: 100px;
-  height: 100%;
+  height: 80px;
   border-radius: 5px;
   object-fit: cover;
   overflow: hidden;

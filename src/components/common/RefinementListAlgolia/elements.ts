@@ -9,7 +9,7 @@ export const ListItem: any = styled.li`
     props.isRefined ? props.theme.colors.main : props.theme.colors.blackGray};
   display: inline-block;
   padding: 5px 15px;
-  margin: 0 5px;
+  margin: 3px 5px;
   color: ${(props) => props.theme.colors.gray};
   text-transform: lowercase;
   &::first-letter {

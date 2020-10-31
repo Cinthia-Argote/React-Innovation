@@ -34,7 +34,7 @@ export const SearchBarContainer = styled.div`
 
 export const OptionsContainer = styled.div`
   width: 100%;
-  padding: 16px 0;
+  padding: 10px 0;
 `;
 
 export const NoResults = styled.div`

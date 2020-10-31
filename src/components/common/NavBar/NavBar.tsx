@@ -17,6 +17,11 @@ const LeftMenu = styled.div`
 const RightMenu = styled.div`
   width: auto;
   height: 100%;
+  display: flex;
+  align-items: center;
+  & > *:not(:last-child) {
+    margin-right: 10px;
+  }
 `;
 
 interface Props {

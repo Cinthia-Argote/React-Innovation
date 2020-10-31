@@ -6,6 +6,7 @@ import { H1, Subtitle1 } from "../../../common/typography";
 import actio from "../../../../images/actio_logo.svg";
 import NavBar from "../../../common/NavBar/NavBar";
 import IconButton from "../../../common/IconButton/IconButton";
+import Button from "../../../common/Button/Button";
 
 const Container = styled.header`
   width: 100%;
@@ -25,8 +26,13 @@ const HomeHeader: React.FC<Props> = ({ onSearchOpt }) => {
   return (
     <Container>
       <NavBar
-        leftMenu={<img src={actio} alt="actio" width="30px" />}
-        rightMenu={<IconButton icon={faSearch} onClick={onSearchOpt} />}
+        leftMenu={<img src={actio} alt="actio" width="30px" height="30px" />}
+        rightMenu={
+          <>
+            <Button onClick={onSearchOpt}>Create an Event</Button>
+            <IconButton icon={faSearch} onClick={onSearchOpt} />
+          </>
+        }
       />
       <HomeTitle>
         <H1>Actio</H1>
