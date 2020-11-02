@@ -29,7 +29,13 @@ const HomeHeader: React.FC<Props> = ({ onSearchOpt }) => {
         leftMenu={<img src={actio} alt="actio" width="30px" height="30px" />}
         rightMenu={
           <>
-            <Button onClick={onSearchOpt}>Create an Event</Button>
+            <Button
+              onClick={() => {
+                window.location.replace("http://localhost:3000/event/create");
+              }}
+            >
+              Create an Event
+            </Button>
             <IconButton icon={faSearch} onClick={onSearchOpt} />
           </>
         }
